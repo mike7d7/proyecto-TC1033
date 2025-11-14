@@ -15,8 +15,13 @@ Se ejecuta en una terminal y cuenta con un menú inicial para seleccionar las di
 
 El programa corre solamente en la terminal y esta escrito en [C++23](https://en.wikipedia.org/wiki/C%2B%2B23) por lo que corre en todos los sistemas operativos
 
-Compilar con: "g++ empleado.h empresa.h main.cpp"
+Para la compilación se utiliza Cmake con los siguientes comandos en Linux:
+`mkdir -p build`
+`cd build`
+`cmake ..`
+`cd ..`
+`cmake --build build`
 
-Correr en linux: "/a.out"
+Correr en linux: "./banco"
 
 Correr en windows: "a.exe"
