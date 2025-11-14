@@ -11,4 +11,5 @@ class CuentaCorriente : public CuentaBancaria {
         : CuentaBancaria(id, ti, sa), linea_credito(lc) {};
     float getLineaCredito();
     void setLineaCredito(double);
+    void retirar(double);
 };
