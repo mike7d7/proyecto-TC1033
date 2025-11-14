@@ -13,7 +13,6 @@ add_executable(banco
 set_target_properties(banco PROPERTIES
     CXX_STANDARD 23
     CXX_STANDARD_REQUIRED YES
-    CXX_EXTENSIONS NO
 )
 
 install(TARGETS banco
