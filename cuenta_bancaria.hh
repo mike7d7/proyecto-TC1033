@@ -1,3 +1,6 @@
+#ifndef CUENTA_BANCARIA_H
+#define CUENTA_BANCARIA_H
+
 #include <string>
 
 class CuentaBancaria {
@@ -17,3 +20,5 @@ class CuentaBancaria {
     double retirar(double);
     void depositar(double);
 };
+
+#endif
