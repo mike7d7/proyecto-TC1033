@@ -13,13 +13,17 @@ Se ejecuta en una terminal y cuenta con un menú inicial para seleccionar las di
 
 ### Consideraciones
 
-El programa corre solamente en la terminal y esta escrito en [C++23](https://en.wikipedia.org/wiki/C%2B%2B23) por lo que corre en todos los sistemas operativos
+El programa corre solamente en la terminal y esta escrito en [C++11](https://en.wikipedia.org/wiki/C++11) por lo que corre en todos los sistemas operativos
 
 Para la compilación se utiliza Cmake con los siguientes comandos en Linux:
 `mkdir -p build`
+
 `cd build`
+
 `cmake ..`
+
 `cd ..`
+
 `cmake --build build`
 
 Correr en linux: "./banco"
