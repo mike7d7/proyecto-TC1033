@@ -11,7 +11,7 @@ add_executable(banco
 )
 
 set_target_properties(banco PROPERTIES
-    CXX_STANDARD 23
+    CXX_STANDARD 11
     CXX_STANDARD_REQUIRED YES
 )
 
