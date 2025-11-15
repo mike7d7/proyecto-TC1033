@@ -15,17 +15,8 @@ Se ejecuta en una terminal y cuenta con un menú inicial para seleccionar las di
 
 El programa corre solamente en la terminal y esta escrito en [C++11](https://en.wikipedia.org/wiki/C++11) por lo que corre en todos los sistemas operativos
 
-Para la compilación se utiliza Cmake con los siguientes comandos en Linux:
-`mkdir -p build`
+Para la compilación se utiliza el siguiente comando en Linux:
 
-`cd build`
+`g++ main.cc cuenta_ahorro.cc cuenta_bancaria.cc cuenta_corriente.cc cuenta_inversion.cc -o banco`
 
-`cmake ..`
-
-`cd ..`
-
-`cmake --build build`
-
-Correr en linux: "./banco"
-
-Correr en windows: "a.exe"
+y el comando `./banco` para ejecutar el programa.
