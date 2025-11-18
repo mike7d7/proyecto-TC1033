@@ -17,6 +17,6 @@ El programa corre solamente en la terminal y esta escrito en [C++11](https://en.
 
 Para la compilación se utiliza el siguiente comando en Linux:
 
-`g++ main.cc cuenta_ahorro.cc cuenta_bancaria.cc cuenta_corriente.cc cuenta_inversion.cc -o banco`
+`g++ main.cpp cuenta_ahorro.cpp cuenta_bancaria.cpp cuenta_corriente.cpp cuenta_inversion.cpp -o banco`
 
 y el comando `./banco` para ejecutar el programa.

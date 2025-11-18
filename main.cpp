@@ -1,6 +1,6 @@
-#include "cuenta_ahorro.hh"
-#include "cuenta_corriente.hh"
-#include "cuenta_inversion.hh"
+#include "cuenta_ahorro.hpp"
+#include "cuenta_corriente.hpp"
+#include "cuenta_inversion.hpp"
 #include <iostream>
 
 int main() {

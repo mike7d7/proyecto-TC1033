@@ -1,10 +1,8 @@
-#include "cuenta_bancaria.hh"
+#include "cuenta_bancaria.hpp"
 
 int CuentaBancaria::getId() { return id; }
 double CuentaBancaria::getSaldo() { return saldo; }
-void CuentaBancaria::setSaldo(double sa) {
-    saldo = sa;
-}
+void CuentaBancaria::setSaldo(double sa) { saldo = sa; }
 double CuentaBancaria::retirar(double cantidad) {
   if (cantidad <= saldo) {
     saldo -= cantidad;

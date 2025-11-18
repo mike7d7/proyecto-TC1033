@@ -1,4 +1,4 @@
-#include "cuenta_bancaria.hh"
+#include "cuenta_bancaria.hpp"
 
 class CuentaAhorro : public CuentaBancaria {
   private:
