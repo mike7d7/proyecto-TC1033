@@ -13,10 +13,22 @@ Se ejecuta en una terminal y cuenta con un menú inicial para seleccionar las di
 
 ### Consideraciones
 
-El programa corre solamente en la terminal y esta escrito en [C++11](https://en.wikipedia.org/wiki/C++11) por lo que corre en todos los sistemas operativos
+El programa corre solamente en la terminal y esta escrito en [C++11](https://en.wikipedia.org/wiki/C++11) por lo que corre en todos los sistemas operativos.
+Para compilar, se debe usar el compilador `g++`. Otros compiladores pueden funcionar, pero no se recomiendan.
 
-Para la compilación se utiliza el siguiente comando en Linux:
+### Compilación e instalación
 
-`g++ main.cpp cuenta_ahorro.cpp cuenta_bancaria.cpp cuenta_corriente.cpp cuenta_inversion.cpp -o banco`
+#### Linux
 
-y el comando `./banco` para ejecutar el programa.
+Compilación:
+`g++ -std=c++11 main.cpp cuenta_ahorro.cpp cuenta_bancaria.cpp cuenta_corriente.cpp cuenta_inversion.cpp -o banco`
+
+Ejecución: `./banco`
+
+#### Windows
+
+Compilación:
+
+`g++ -std=c++11 main.cpp cuenta_ahorro.cpp cuenta_bancaria.cpp cuenta_corriente.cpp cuenta_inversion.cpp -o banco`
+
+Ejecución: `.\banco.exe`
