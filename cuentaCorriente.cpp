@@ -1,4 +1,4 @@
-#include "cuenta_corriente.hpp"
+#include "cuentaCorriente.hpp"
 
 float CuentaCorriente::getLineaCredito() { return linea_credito; }
 

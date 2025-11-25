@@ -1,4 +1,4 @@
-#include "cuenta_bancaria.hpp"
+#include "cuentaBancaria.hpp"
 
 int CuentaBancaria::getId() { return id; }
 double CuentaBancaria::getSaldo() { return saldo; }

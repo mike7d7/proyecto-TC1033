@@ -21,7 +21,7 @@ Para compilar, se debe usar el compilador `g++`. Otros compiladores pueden funci
 #### Linux
 
 Compilación:
-`g++ -std=c++11 main.cpp cuenta_ahorro.cpp cuenta_bancaria.cpp cuenta_corriente.cpp cuenta_inversion.cpp -o banco`
+`g++ -std=c++11 main.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco`
 
 Ejecución: `./banco`
 
@@ -29,6 +29,6 @@ Ejecución: `./banco`
 
 Compilación:
 
-`g++ -std=c++11 main.cpp cuenta_ahorro.cpp cuenta_bancaria.cpp cuenta_corriente.cpp cuenta_inversion.cpp -o banco`
+`g++ -std=c++11 main.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco`
 
 Ejecución: `.\banco.exe`

@@ -1,4 +1,4 @@
-#include "cuenta_inversion.hpp"
+#include "cuentaInversion.hpp"
 
 float CuentaInversion::getRendimiento() { return rendimiento; }
 

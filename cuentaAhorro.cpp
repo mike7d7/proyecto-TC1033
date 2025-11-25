@@ -1,4 +1,4 @@
-#include "cuenta_ahorro.hpp"
+#include "cuentaAhorro.hpp"
 
 float CuentaAhorro::getInteres() { return interes; }
 

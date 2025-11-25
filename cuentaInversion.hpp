@@ -1,4 +1,4 @@
-#include "cuenta_bancaria.hpp"
+#include "cuentaBancaria.hpp"
 
 class CuentaInversion : public CuentaBancaria {
   private:
