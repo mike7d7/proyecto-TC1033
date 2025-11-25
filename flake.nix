@@ -32,11 +32,18 @@
             version = "0.0.1";
             src = self;
             nativeBuildInputs = with pkgs; [
-              cmake
               pkg-config
+              gcc
             ];
             buildInputs = with pkgs; [
             ];
+            buildPhase = ''
+              g++ -std=c++11 main.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco
+            '';
+            installPhase = ''
+              mkdir -p $out/bin
+              cp banco $out/bin/
+            '';
           };
         }
       );
@@ -49,7 +56,6 @@
               [
                 gcc
                 clang-tools
-                cmake
                 cppcheck
                 pkg-config
               ]
