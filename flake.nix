@@ -43,27 +43,21 @@
       devShells = forEachSupportedSystem (
         { pkgs }:
         {
-          default =
-            pkgs.mkShell.override
-              {
-                # Override stdenv in order to change compiler:
-                stdenv = pkgs.clangStdenv;
-              }
-              {
-                packages =
-                  with pkgs;
-                  [
-                    gcc
-                    clang-tools
-                    cmake
-                    cppcheck
-                    pkg-config
-                  ]
-                  ++ (if system == "aarch64-darwin" then [ ] else [ lldb ]);
-                shellHook = ''
-                  export SHELL=/run/current-system/sw/bin/bash
-                '';
-              };
+          default = pkgs.mkShell {
+            packages =
+              with pkgs;
+              [
+                gcc
+                clang-tools
+                cmake
+                cppcheck
+                pkg-config
+              ]
+              ++ (if system == "aarch64-darwin" then [ ] else [ lldb ]);
+            shellHook = ''
+              export SHELL=/run/current-system/sw/bin/bash
+            '';
+          };
         }
       );
     };
