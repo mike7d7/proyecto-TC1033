@@ -16,6 +16,10 @@ Se ejecuta en una terminal y cuenta con un menú inicial para seleccionar las di
 El programa corre solamente en la terminal y esta escrito en [C++11](https://en.wikipedia.org/wiki/C++11) por lo que corre en todos los sistemas operativos.
 Para compilar, se debe usar el compilador `g++`. Otros compiladores pueden funcionar, pero no se recomiendan.
 
+### Estilo del código
+
+Para el código se utiliza el formateador [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html), el archivo `.clang-format` se encuentra el estilo específico utilizado en este proyecto.
+
 ### Compilación e instalación
 
 #### Linux
