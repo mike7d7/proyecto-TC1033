@@ -25,7 +25,7 @@ Para el código se utiliza el formateador [ClangFormat](https://clang.llvm.org/d
 #### Linux
 
 Compilación:
-`g++ -std=c++11 main.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco`
+`g++ -std=c++11 main.cpp activo.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco`
 
 Ejecución: `./banco`
 
@@ -33,6 +33,6 @@ Ejecución: `./banco`
 
 Compilación:
 
-`g++ -std=c++11 main.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco`
+`g++ -std=c++11 main.cpp activo.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco`
 
 Ejecución: `.\banco.exe`
