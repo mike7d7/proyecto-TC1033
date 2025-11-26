@@ -1,3 +1,6 @@
+#ifndef INVERSION_H
+#define INVERSION_H
+
 #include "activo.hpp"
 #include "cuentaBancaria.hpp"
 
@@ -12,3 +15,5 @@ class CuentaInversion : public CuentaBancaria {
     Activo getActivo();
     void generaRendimiento();
 };
+
+#endif

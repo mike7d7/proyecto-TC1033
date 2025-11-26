@@ -1,3 +1,6 @@
+#ifndef AHORRO_H
+#define AHORRO_H
+
 #include "cuentaBancaria.hpp"
 
 class CuentaAhorro : public CuentaBancaria {
@@ -14,3 +17,5 @@ class CuentaAhorro : public CuentaBancaria {
     void setInteres(float);
     void generaInteres();
 };
+
+#endif

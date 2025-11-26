@@ -1,3 +1,6 @@
+#ifndef CORRIENTE_H
+#define CORRIENTE_H
+
 #include "cuentaBancaria.hpp"
 
 class CuentaCorriente : public CuentaBancaria {
@@ -15,3 +18,5 @@ class CuentaCorriente : public CuentaBancaria {
     void setLineaCredito(double);
     void retirar(double);
 };
+
+#endif
