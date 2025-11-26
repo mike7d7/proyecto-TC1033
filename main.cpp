@@ -1,9 +1,12 @@
+#include "activo.hpp"
 #include "cuentaAhorro.hpp"
 #include "cuentaCorriente.hpp"
 #include "cuentaInversion.hpp"
 #include <iostream>
 
 int main() {
+  Activo activos[] = {Activo(0, "Bonos", 0.1), Activo(1, "Bolsa", 0.15),
+                      Activo(2, "Bienes raíces", 0.07)};
   int generador_id = 0;
 
   std::cout << std::fixed;
@@ -55,7 +58,7 @@ int main() {
             << std::endl;
 
   CuentaInversion cuenta_inversion_1(generador_id, "Persona Inversion 1", 1000,
-                                     0.15, "bonos");
+                                     &activos[0]);
 
   std::cout << "Inversion 1 saldo: " << cuenta_inversion_1.getSaldo()
             << std::endl;
@@ -67,9 +70,11 @@ int main() {
   std::cout << "Inversion 1 saldo: " << cuenta_inversion_1.getSaldo()
             << std::endl;
 
-  cuenta_inversion_1.setRendimiento(0.17);
   std::cout << "Inversion 1 rendimiento: "
-            << cuenta_inversion_1.getRendimiento() << std::endl;
+            << cuenta_inversion_1.getActivo().getRendimiento() << std::endl;
+  activos[0].setRendimiento(0.17);
+  std::cout << "Inversion 1 rendimiento: "
+            << cuenta_inversion_1.getActivo().getRendimiento() << std::endl;
 
   cuenta_inversion_1.generaRendimiento();
   std::cout << "Inversion 1 saldo: " << cuenta_inversion_1.getSaldo()

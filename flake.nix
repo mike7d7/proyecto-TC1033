@@ -38,7 +38,7 @@
             buildInputs = with pkgs; [
             ];
             buildPhase = ''
-              g++ -std=c++11 main.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco
+              g++ -std=c++11 main.cpp activo.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco
             '';
             installPhase = ''
               mkdir -p $out/bin

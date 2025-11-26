@@ -1,17 +1,13 @@
+#include "activo.hpp"
 #include "cuentaBancaria.hpp"
 
 class CuentaInversion : public CuentaBancaria {
   private:
-    float rendimiento;
-    std::string tipo_activo;
+    Activo *activo;
 
   public:
-    CuentaInversion(int id, std::string ti)
-        : CuentaBancaria(id, ti, 0.0), rendimiento(0.1),
-          tipo_activo("acciones") {};
-    CuentaInversion(int id, std::string ti, double sa, float re, std::string ta)
-        : CuentaBancaria(id, ti, sa), rendimiento(re), tipo_activo(ta) {};
-    float getRendimiento();
-    void setRendimiento(float);
+    CuentaInversion(int id, std::string ti, double sa, Activo *act)
+        : CuentaBancaria(id, ti, sa), activo(act) {};
+    Activo getActivo();
     void generaRendimiento();
 };

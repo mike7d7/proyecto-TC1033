@@ -1,7 +1,7 @@
 #include "cuentaInversion.hpp"
+#include "activo.hpp"
 
-float CuentaInversion::getRendimiento() { return rendimiento; }
-
-void CuentaInversion::setRendimiento(float re) { rendimiento = re; }
-
-void CuentaInversion::generaRendimiento() { saldo += saldo * rendimiento; }
+Activo CuentaInversion::getActivo() { return *activo; }
+void CuentaInversion::generaRendimiento() {
+  saldo += saldo * activo->getRendimiento();
+}
