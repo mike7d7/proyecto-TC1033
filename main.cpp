@@ -1,84 +1,54 @@
-#include "activo.hpp"
-#include "cuentaAhorro.hpp"
-#include "cuentaCorriente.hpp"
-#include "cuentaInversion.hpp"
+#include "banco.hpp"
 #include <iostream>
+#include <limits>
+#include <ostream>
+#include <sstream>
+#include <string>
+
+void menu_principal() {
+  std::cout << "Ingresa una opción" << std::endl;
+  std::cout << "1.- Agregar cuenta" << std::endl;
+  std::cout << "2.- Mostrar cuentas" << std::endl;
+  std::cout << "3.- Salir" << std::endl;
+}
+
+int get_int() {
+  int number;
+  while (!(std::cin >> number)) {
+    // https://cplusplus.com/forum/beginner/283248/#msg1226145
+    std::cout << "Entrada inválida, intenta otra vez." << std::endl;
+    std::cin.clear(); // clear fail flag
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
+                    '\n'); // discard the whole line
+  }
+  return number;
+}
 
 int main() {
-  Activo activos[] = {Activo(0, "Bonos", 0.1), Activo(1, "Bolsa", 0.15),
-                      Activo(2, "Bienes raíces", 0.07)};
-  int generador_id = 0;
+  Banco banco;
 
-  std::cout << std::fixed;
-  std::cout.precision(2);
+  while (true) {
+    menu_principal();
+    int opcion;
+    std::cin >> opcion;
 
-  std::cout << "Simulador de banco" << std::endl;
-
-  CuentaAhorro cuenta_ahorro(generador_id, "Persona Ahorro");
-  generador_id++;
-
-  std::cout << "Ahorro saldo: " << cuenta_ahorro.getSaldo() << std::endl;
-  cuenta_ahorro.setSaldo(5000.0);
-  std::cout << "Ahorro saldo: " << cuenta_ahorro.getSaldo() << std::endl;
-  std::cout << "Ahorro intereses: " << cuenta_ahorro.getInteres() << std::endl;
-  cuenta_ahorro.generaInteres();
-  std::cout << "Ahorro saldo: " << cuenta_ahorro.getSaldo() << std::endl;
-
-  CuentaAhorro cuenta_ahorro_2(generador_id, "Persona Ahorro 2", 10000, 0.2);
-  generador_id++;
-
-  std::cout << "Ahorro 2 saldo: " << cuenta_ahorro_2.getSaldo() << std::endl;
-  std::cout << "Ahorro 2 intereses: " << cuenta_ahorro_2.getInteres()
-            << std::endl;
-  cuenta_ahorro_2.setInteres(0.1);
-  std::cout << "Ahorro 2 intereses: " << cuenta_ahorro_2.getInteres()
-            << std::endl;
-
-  CuentaCorriente cuenta_corriente_1(generador_id, "Persona Corriente 1");
-  generador_id++;
-
-  std::cout << "Corriente 1 saldo: " << cuenta_corriente_1.getSaldo()
-            << std::endl;
-  std::cout << "Corriente 1 crédito: " << cuenta_corriente_1.getLineaCredito()
-            << std::endl;
-
-  cuenta_corriente_1.setSaldo(2000.0);
-  cuenta_corriente_1.setLineaCredito(500.0);
-
-  std::cout << "Corriente 1 saldo: " << cuenta_corriente_1.getSaldo()
-            << std::endl;
-  std::cout << "Corriente 1 crédito: " << cuenta_corriente_1.getLineaCredito()
-            << std::endl;
-
-  cuenta_corriente_1.retirar(2100);
-  std::cout << "Corriente 1 retiro de 2100" << std::endl;
-  std::cout << "Corriente 1 saldo: " << cuenta_corriente_1.getSaldo()
-            << std::endl;
-  std::cout << "Corriente 1 crédito: " << cuenta_corriente_1.getLineaCredito()
-            << std::endl;
-
-  CuentaInversion cuenta_inversion_1(generador_id, "Persona Inversion 1", 1000,
-                                     &activos[0]);
-
-  std::cout << "Inversion 1 saldo: " << cuenta_inversion_1.getSaldo()
-            << std::endl;
-  cuenta_inversion_1.depositar(1000);
-  std::cout << "Inversion 1 saldo: " << cuenta_inversion_1.getSaldo()
-            << std::endl;
-
-  cuenta_inversion_1.retirar(500);
-  std::cout << "Inversion 1 saldo: " << cuenta_inversion_1.getSaldo()
-            << std::endl;
-
-  std::cout << "Inversion 1 rendimiento: "
-            << cuenta_inversion_1.getActivo().getRendimiento() << std::endl;
-  activos[0].setRendimiento(0.17);
-  std::cout << "Inversion 1 rendimiento: "
-            << cuenta_inversion_1.getActivo().getRendimiento() << std::endl;
-
-  cuenta_inversion_1.generaRendimiento();
-  std::cout << "Inversion 1 saldo: " << cuenta_inversion_1.getSaldo()
-            << std::endl;
-
+    std::string titular;
+    std::stringstream cuentas;
+    switch (opcion) {
+    case 1:
+      int tipo;
+      tipo = get_int();
+      std::cin.ignore();
+      getline(std::cin, titular);
+      banco.abrirCuenta(tipo, banco.getIndice(tipo), titular);
+      break;
+    case 2:
+      cuentas = banco.printCuentas();
+      std::cout << cuentas.str();
+      break;
+    default:
+      return 0;
+    }
+  }
   return 0;
 }
