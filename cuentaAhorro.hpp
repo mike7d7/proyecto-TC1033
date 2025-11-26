@@ -5,6 +5,7 @@ class CuentaAhorro : public CuentaBancaria {
     float interes;
 
   public:
+    CuentaAhorro() : CuentaBancaria(0, "nadie", 0.0), interes(0) {};
     CuentaAhorro(int id, std::string titular)
         : CuentaBancaria(id, titular, 0.0), interes(0.05) {};
     CuentaAhorro(int id, std::string titular, double sa, float in)

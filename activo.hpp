@@ -10,6 +10,7 @@ class Activo {
     float rendimiento;
 
   public:
+    Activo() : id(0), nombre("activo_default"), rendimiento(0.0) {};
     Activo(int id, std::string nombre, float rendimiento)
         : id(id), nombre(nombre), rendimiento(rendimiento) {};
     int getId();
