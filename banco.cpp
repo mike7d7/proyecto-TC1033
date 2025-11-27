@@ -58,25 +58,30 @@ void Banco::abrirCuenta(std::string titular, double saldo, Activo *activo) {
 std::stringstream Banco::printCuentas() {
   std::stringstream output_string;
   output_string << "Cuentas de Ahorro" << std::endl;
+  output_string << "Titular | id | Saldo | Interés" << std::endl;
   for (int i = 0; i < num_ahorro; i++) {
     output_string << ahorros[i].getTitular() << " | " << ahorros[i].getId()
-                  << " | " << ahorros[i].getSaldo() << std::endl;
+                  << " | " << ahorros[i].getSaldo() << " | "
+                  << ahorros[i].getInteres() << std::endl;
   }
   output_string << std::endl;
 
   output_string << "Cuentas Corrientes" << std::endl;
+  output_string << "Titular | id | Saldo | Línea de crédito" << std::endl;
   for (int i = 0; i < num_corriente; i++) {
     output_string << corrientes[i].getTitular() << " | "
                   << corrientes[i].getId() << " | " << corrientes[i].getSaldo()
-                  << std::endl;
+                  << " | " << corrientes[i].getLineaCredito() << std::endl;
   }
   output_string << std::endl;
 
   output_string << "Cuentas de Inversion" << std::endl;
+  output_string << "Titular | id | Saldo | Activo" << std::endl;
   for (int i = 0; i < num_inversiones; i++) {
     output_string << inversiones[i].getTitular() << " | "
                   << inversiones[i].getId() << " | "
-                  << inversiones[i].getSaldo() << std::endl;
+                  << inversiones[i].getSaldo() << " | "
+                  << inversiones[i].getActivo().getNombre() << std::endl;
   }
   output_string << std::endl;
   return output_string;
