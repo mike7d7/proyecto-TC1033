@@ -74,16 +74,25 @@ int main() {
 
       switch (tipo) {
       case 1:
+        std::cout << "Ingresa el porcentaje de interes como decimal (ej. 0.19)."
+                  << std::endl;
         float interes;
         interes = get_float();
         banco.abrirCuenta(titular, saldo, interes);
         break;
       case 2:
+        std::cout << "Ingresa el valor de la línea de crédito." << std::endl;
         double linea_credito;
         linea_credito = get_float();
         banco.abrirCuenta(titular, saldo, linea_credito);
         break;
       case 3:
+        std::cout << "Ingresa el tipo de activo." << std::endl;
+        std::cout << "1.- Bonos" << std::endl;
+        std::cout << "2.- Bolsa" << std::endl;
+        std::cout << "3.- Bienes Raíces" << std::endl;
+        std::cout << "4.- Pagarés" << std::endl;
+        std::cout << "5.- Criptomonedas" << std::endl;
         int activo;
         activo = get_int(1, 5);
         activo = activo - 1;
