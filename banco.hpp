@@ -24,7 +24,10 @@ class Banco {
     int getNumCorriente();
     int getNumInversion();
     int getIndice(int tipo);
-    void abrirCuenta(int tipo, int id, std::string titular);
+    Activo *getActivo(int indice);
+    void abrirCuenta(std::string titular, double saldo, float interes);
+    void abrirCuenta(std::string titular, double saldo, double linea_credito);
+    void abrirCuenta(std::string titular, double saldo, Activo *activo);
     std::stringstream printCuentas();
 };
 #endif

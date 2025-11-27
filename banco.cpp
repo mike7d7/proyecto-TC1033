@@ -1,5 +1,8 @@
 #include "banco.hpp"
 #include "activo.hpp"
+#include "cuentaAhorro.hpp"
+#include "cuentaCorriente.hpp"
+#include "cuentaInversion.hpp"
 #include <sstream>
 
 Banco::Banco() {
@@ -32,22 +35,24 @@ int Banco::getIndice(int tipo) {
   }
 }
 
-void Banco::abrirCuenta(int tipo, int id, std::string titular) {
-  switch (tipo) {
-  case 1:
-    ahorros[num_ahorro] = CuentaAhorro(num_ahorro + 100, titular);
-    num_ahorro++;
-    break;
-  case 2:
-    corrientes[num_corriente] = CuentaCorriente(num_corriente + 200, titular);
-    num_corriente++;
-    break;
-  case 3:
-    inversiones[num_inversiones] =
-        CuentaInversion(num_inversiones + 300, titular, 0.0, &activos[1]);
-    num_inversiones++;
-    break;
-  }
+Activo *Banco::getActivo(int indice) { return &activos[indice]; }
+
+void Banco::abrirCuenta(std::string titular, double saldo, float interes) {
+  int id = 100 + num_ahorro;
+  ahorros[num_ahorro] = CuentaAhorro(id, titular, saldo, interes);
+  num_ahorro++;
+}
+void Banco::abrirCuenta(std::string titular, double saldo,
+                        double linea_credito) {
+  int id = 200 + num_corriente;
+  corrientes[num_corriente] =
+      CuentaCorriente(id, titular, saldo, linea_credito);
+  num_corriente++;
+}
+void Banco::abrirCuenta(std::string titular, double saldo, Activo *activo) {
+  int id = 300 + num_inversiones;
+  inversiones[num_inversiones] = CuentaInversion(id, titular, saldo, activo);
+  num_inversiones++;
 }
 
 std::stringstream Banco::printCuentas() {
