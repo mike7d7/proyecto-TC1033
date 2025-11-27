@@ -24,23 +24,62 @@ int get_int() {
   return number;
 }
 
+float get_float() {
+  float number;
+  while (!(std::cin >> number)) {
+    // https://cplusplus.com/forum/beginner/283248/#msg1226145
+    std::cout << "Entrada inválida, intenta otra vez." << std::endl;
+    std::cin.clear(); // clear fail flag
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
+                    '\n'); // discard the whole line
+  }
+  return number;
+}
+
 int main() {
   Banco banco;
 
   while (true) {
     menu_principal();
     int opcion;
-    std::cin >> opcion;
+    opcion = get_int();
 
     std::string titular;
     std::stringstream cuentas;
     switch (opcion) {
     case 1:
+      std::cout << "Ingresa el tipo de cuenta a abrir." << std::endl;
+      // Tipo 1 = ahorro, 2 = corriente, 3 = inversion
       int tipo;
       tipo = get_int();
       std::cin.ignore();
+
+      std::cout << "Ingresa el saldo inicial." << std::endl;
+      double saldo;
+      saldo = get_float();
+      std::cin.ignore();
+
+      std::cout << "Ingresa el titular de la cuenta." << std::endl;
       getline(std::cin, titular);
-      banco.abrirCuenta(tipo, banco.getIndice(tipo), titular);
+
+      switch (tipo) {
+      case 1:
+        float interes;
+        interes = get_float();
+        banco.abrirCuenta(titular, saldo, interes);
+        break;
+      case 2:
+        double linea_credito;
+        linea_credito = get_float();
+        banco.abrirCuenta(titular, saldo, linea_credito);
+        break;
+      case 3:
+        int activo;
+        activo = get_int();
+        banco.abrirCuenta(titular, saldo, banco.getActivo(activo));
+        break;
+      }
+
       break;
     case 2:
       cuentas = banco.printCuentas();
