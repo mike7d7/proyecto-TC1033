@@ -16,6 +16,7 @@ class CuentaBancaria {
         : id(id), titular(titular), saldo(saldo) {};
     int getId();
     double getSaldo();
+    std::string getTitular();
     void setSaldo(double);
     double retirar(double);
     void depositar(double);
