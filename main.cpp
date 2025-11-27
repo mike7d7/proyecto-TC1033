@@ -12,7 +12,7 @@ void menu_principal() {
   std::cout << "3.- Salir" << std::endl;
 }
 
-int get_int() {
+int get_int(int min_val, int max_val) {
   int number;
   while (!(std::cin >> number)) {
     // https://cplusplus.com/forum/beginner/283248/#msg1226145
@@ -20,6 +20,13 @@ int get_int() {
     std::cin.clear(); // clear fail flag
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
                     '\n'); // discard the whole line
+  }
+  if (number < min_val || number > max_val) {
+    std::cout << "Entrada inválida, intenta otra vez." << std::endl;
+    std::cin.clear(); // clear fail flag
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
+                    '\n'); // discard the whole line
+    number = get_int(min_val, max_val);
   }
   return number;
 }
@@ -42,7 +49,7 @@ int main() {
   while (true) {
     menu_principal();
     int opcion;
-    opcion = get_int();
+    opcion = get_int(1, 3);
 
     std::string titular;
     std::stringstream cuentas;
@@ -54,7 +61,7 @@ int main() {
       std::cout << "3.- Inversión" << std::endl;
 
       int tipo;
-      tipo = get_int();
+      tipo = get_int(1, 3);
       std::cin.ignore();
 
       std::cout << "Ingresa el saldo inicial." << std::endl;
@@ -78,7 +85,8 @@ int main() {
         break;
       case 3:
         int activo;
-        activo = get_int();
+        activo = get_int(1, 5);
+        activo = activo - 1;
         banco.abrirCuenta(titular, saldo, banco.getActivo(activo));
         break;
       }
