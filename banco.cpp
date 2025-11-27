@@ -35,16 +35,16 @@ int Banco::getIndice(int tipo) {
 void Banco::abrirCuenta(int tipo, int id, std::string titular) {
   switch (tipo) {
   case 1:
-    ahorros[num_ahorro] = CuentaAhorro(num_ahorro, titular);
+    ahorros[num_ahorro] = CuentaAhorro(num_ahorro + 100, titular);
     num_ahorro++;
     break;
   case 2:
-    corrientes[num_corriente] = CuentaCorriente(num_corriente, titular);
+    corrientes[num_corriente] = CuentaCorriente(num_corriente + 200, titular);
     num_corriente++;
     break;
   case 3:
     inversiones[num_inversiones] =
-        CuentaInversion(num_inversiones, titular, 0.0, &activos[1]);
+        CuentaInversion(num_inversiones + 300, titular, 0.0, &activos[1]);
     num_inversiones++;
     break;
   }
