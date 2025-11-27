@@ -49,7 +49,10 @@ int main() {
     switch (opcion) {
     case 1:
       std::cout << "Ingresa el tipo de cuenta a abrir." << std::endl;
-      // Tipo 1 = ahorro, 2 = corriente, 3 = inversion
+      std::cout << "1.- Ahorro" << std::endl;
+      std::cout << "2.- Corriente" << std::endl;
+      std::cout << "3.- Inversión" << std::endl;
+
       int tipo;
       tipo = get_int();
       std::cin.ignore();
