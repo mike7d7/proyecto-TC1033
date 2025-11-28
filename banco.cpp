@@ -23,18 +23,18 @@ CuentaInversion *Banco::getInversiones() { return inversiones; }
 
 int Banco::getIndice(int tipo) {
   switch (tipo) {
-  case 1:
-    return num_ahorro;
-    break;
-  case 2:
-    return num_corriente;
-    break;
-  case 3:
-    return num_inversiones;
-    break;
-  default:
-    return -1;
-    break;
+    case 1:
+      return num_ahorro;
+      break;
+    case 2:
+      return num_corriente;
+      break;
+    case 3:
+      return num_inversiones;
+      break;
+    default:
+      return -1;
+      break;
   }
 }
 
