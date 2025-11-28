@@ -13,11 +13,12 @@ void clear() {
 }
 
 void menu_principal() {
-  clear();
+  // clear();
   std::cout << "Ingresa una opción" << std::endl;
   std::cout << "1.- Agregar cuenta" << std::endl;
   std::cout << "2.- Mostrar cuentas" << std::endl;
-  std::cout << "3.- Salir" << std::endl;
+  std::cout << "3.- Realizar Operación" << std::endl;
+  std::cout << "4.- Salir" << std::endl;
 }
 
 int get_int(int min_val, int max_val) {
