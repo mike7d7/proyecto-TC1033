@@ -144,6 +144,10 @@ int main() {
             id_tipo = id_general - (tipo * 100);
             switch (tipo) {
               case 1: {
+                if (id_tipo < 0 || id_tipo > banco.getNumAhorro() - 1) {
+                  std::cout << "Id inválido" << std::endl;
+                  break;
+                }
                 CuentaAhorro *cuenta_ahorro;
                 cuenta_ahorro = &banco.getAhorros()[id_tipo];
                 if (!cuenta_ahorro->retirar(cantidad)) {
@@ -154,6 +158,10 @@ int main() {
                 break;
               }
               case 2: {
+                if (id_tipo < 0 || id_tipo > banco.getNumCorriente() - 1) {
+                  std::cout << "Id inválido" << std::endl;
+                  break;
+                }
                 CuentaCorriente *cuenta_corriente;
                 cuenta_corriente = &banco.getCorrientes()[id_tipo];
                 if (!cuenta_corriente->retirar(cantidad)) {
@@ -164,6 +172,10 @@ int main() {
                 break;
               }
               case 3: {
+                if (id_tipo < 0 || id_tipo > banco.getNumInversion() - 1) {
+                  std::cout << "Id inválido" << std::endl;
+                  break;
+                }
                 CuentaInversion *cuenta_inversion;
                 cuenta_inversion = &banco.getInversiones()[id_tipo];
                 if (!cuenta_inversion->retirar(cantidad)) {
