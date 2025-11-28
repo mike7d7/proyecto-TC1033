@@ -15,8 +15,11 @@ Banco::Banco() {
 }
 
 int Banco::getNumAhorro() { return num_ahorro; }
+CuentaAhorro *Banco::getAhorros() { return ahorros; }
 int Banco::getNumCorriente() { return num_corriente; }
+CuentaCorriente *Banco::getCorrientes() { return corrientes; }
 int Banco::getNumInversion() { return num_inversiones; }
+CuentaInversion *Banco::getInversiones() { return inversiones; }
 
 int Banco::getIndice(int tipo) {
   switch (tipo) {
