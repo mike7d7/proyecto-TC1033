@@ -26,7 +26,6 @@ class Banco {
     CuentaCorriente *getCorrientes();
     int getNumInversion();
     CuentaInversion *getInversiones();
-    int getIndice(int tipo);
     Activo *getActivo(int indice);
     void abrirCuenta(std::string titular, double saldo, float interes);
     void abrirCuenta(std::string titular, double saldo, double linea_credito);
