@@ -14,7 +14,7 @@ class CuentaCorriente : public CuentaBancaria {
         : CuentaBancaria(id, ti, 0.0), linea_credito(5000.0) {};
     CuentaCorriente(int id, std::string ti, double sa, double lc)
         : CuentaBancaria(id, ti, sa), linea_credito(lc) {};
-    float getLineaCredito();
+    double getLineaCredito();
     void setLineaCredito(double);
     int retirar(double);
 };
