@@ -18,7 +18,7 @@ class CuentaBancaria {
     double getSaldo();
     std::string getTitular();
     void setSaldo(double);
-    double retirar(double);
+    int retirar(double);
     void depositar(double);
 };
 
