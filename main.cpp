@@ -187,8 +187,56 @@ int main() {
               }
             }
             break;
-          // case 2:
-          //   break;
+          case 2:
+            std::cout << "Ingresa la cantidad a depositar" << std::endl;
+            double cantidad2;
+            cantidad2 = get_float();
+
+            std::cout << "Ingresa el Id de la cuenta a la cual se depositará"
+                      << std::endl;
+            int id_general2;
+            id_general2 = get_int(100, 399);
+            int tipo2;
+            tipo2 = id_general2 / 100;
+
+            int id_tipo2;
+            id_tipo2 = id_general2 - (tipo2 * 100);
+            switch (tipo2) {
+              case 1: {
+                if (id_tipo2 < 0 || id_tipo2 > banco.getNumAhorro() - 1) {
+                  std::cout << "Id inválido" << std::endl;
+                  break;
+                }
+                CuentaAhorro *cuenta_ahorro;
+                cuenta_ahorro = &banco.getAhorros()[id_tipo2];
+                cuenta_ahorro->depositar(cantidad2);
+                std::cout << "Depósito exitoso" << std::endl;
+                break;
+              }
+              case 2: {
+                if (id_tipo2 < 0 || id_tipo2 > banco.getNumCorriente() - 1) {
+                  std::cout << "Id inválido" << std::endl;
+                  break;
+                }
+                CuentaCorriente *cuenta_corriente;
+                cuenta_corriente = &banco.getCorrientes()[id_tipo2];
+                cuenta_corriente->depositar(cantidad2);
+                std::cout << "Depósito exitoso" << std::endl;
+                break;
+              }
+              case 3: {
+                if (id_tipo2 < 0 || id_tipo2 > banco.getNumInversion() - 1) {
+                  std::cout << "Id inválido" << std::endl;
+                  break;
+                }
+                CuentaInversion *cuenta_inversion;
+                cuenta_inversion = &banco.getInversiones()[id_tipo2];
+                cuenta_inversion->depositar(cantidad2);
+                std::cout << "Depósito exitoso" << std::endl;
+                break;
+              }
+            }
+            break;
           // case 3:
           //   break;
           default:
