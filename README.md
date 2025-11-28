@@ -18,7 +18,7 @@ Para compilar, se debe usar el compilador `g++`. Otros compiladores pueden funci
 
 ### Estilo del código
 
-Para el código se utiliza el formateador [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html), el archivo `.clang-format` se encuentra el estilo específico utilizado en este proyecto.
+Para el código se utiliza el formateador [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html). En el archivo `.clang-format` se encuentra el estilo específico utilizado en este proyecto.
 
 ### Compilación e instalación
 
