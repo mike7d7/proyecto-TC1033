@@ -123,10 +123,9 @@ int main() {
         std::cout << "Ingresa el tipo de movimiento a realizar." << std::endl;
         std::cout << "1.- Retiro" << std::endl;
         std::cout << "2.- Depósito" << std::endl;
-        std::cout << "3.- Transferencia" << std::endl;
-        std::cout << "4.- Cancelar" << std::endl;
+        std::cout << "3.- Cancelar" << std::endl;
         int movimiento;
-        movimiento = get_int(1, 4);
+        movimiento = get_int(1, 3);
         switch (movimiento) {
           case 1:
             std::cout << "Ingresa la cantidad a retirar" << std::endl;
@@ -236,10 +235,6 @@ int main() {
                 break;
               }
             }
-            break;
-          // case 3:
-          //   break;
-          default:
             break;
         }
         break;
