@@ -32,7 +32,6 @@ Ejecución: `./banco`
 #### Windows
 
 Compilación:
-
 `g++ -std=c++11 main.cpp activo.cpp banco.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco`
 
 Ejecución: `.\banco.exe`
