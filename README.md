@@ -11,6 +11,10 @@ depósitos y retiros, pero solo la de ahorros y la de inversión generan un inte
 El programa permite abrir nuevas cuentas y realizar operaciones con las distintas cuentas.
 Se ejecuta en una terminal y cuenta con un menú inicial para seleccionar las distintas opciones.
 
+Al abrir una cuenta nueva se pueden seleccionar 3 tipos de cuentas: de ahorros, corriente (crédito) o de inversión.
+
+Todas las cuentas pueden hacer retiros y recibir depósitos.
+
 ### Consideraciones
 
 El programa corre solamente en la terminal y esta escrito en [C++11](https://en.wikipedia.org/wiki/C++11) por lo que corre en todos los sistemas operativos.
