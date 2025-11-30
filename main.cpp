@@ -84,6 +84,7 @@ double get_double(double min_val, double max_val) {
 int main() {
   Banco banco;
 
+  // Ciclo para menú de opciones
   while (true) {
     menu_principal();
     int opcion;
@@ -91,7 +92,9 @@ int main() {
 
     std::string titular;
     std::stringstream cuentas;
+    // Switch para opciones del menú principal
     switch (opcion) {
+      // Abrir cuenta
       case 1:
         std::cout << "Ingresa el tipo de cuenta a abrir." << std::endl;
         std::cout << "1.- Ahorro" << std::endl;
@@ -144,10 +147,12 @@ int main() {
         }
 
         break;
+      // Mostrar cuentas
       case 2:
         cuentas = banco.printCuentas();
         std::cout << cuentas.str();
         break;
+      // Realizar movimiento
       case 3:
         std::cout << "Ingresa el tipo de movimiento a realizar." << std::endl;
         std::cout << "1.- Retiro" << std::endl;
@@ -156,6 +161,7 @@ int main() {
         int movimiento;
         movimiento = get_int(1, 3);
         switch (movimiento) {
+          // Retiro
           case 1:
             std::cout << "Ingresa la cantidad a retirar" << std::endl;
             double cantidad;
@@ -170,7 +176,9 @@ int main() {
 
             int id_tipo;
             id_tipo = id_general - (tipo * 100);
+            // Switch para cada tipo de cuenta
             switch (tipo) {
+              // Ahorro
               case 1: {
                 if (id_tipo < 0 || id_tipo > banco.getNumAhorro() - 1) {
                   std::cout << "Id inválido" << std::endl;
@@ -185,6 +193,7 @@ int main() {
                 };
                 break;
               }
+              // Corriente
               case 2: {
                 if (id_tipo < 0 || id_tipo > banco.getNumCorriente() - 1) {
                   std::cout << "Id inválido" << std::endl;
@@ -199,6 +208,7 @@ int main() {
                 };
                 break;
               }
+              // Inversión
               case 3: {
                 if (id_tipo < 0 || id_tipo > banco.getNumInversion() - 1) {
                   std::cout << "Id inválido" << std::endl;
@@ -215,6 +225,7 @@ int main() {
               }
             }
             break;
+          // Depósito
           case 2:
             std::cout << "Ingresa la cantidad a depositar" << std::endl;
             double cantidad2;
@@ -229,7 +240,9 @@ int main() {
 
             int id_tipo2;
             id_tipo2 = id_general2 - (tipo2 * 100);
+            // Switch para tipos de cuentas
             switch (tipo2) {
+              // Ahorro
               case 1: {
                 if (id_tipo2 < 0 || id_tipo2 > banco.getNumAhorro() - 1) {
                   std::cout << "Id inválido" << std::endl;
@@ -241,6 +254,7 @@ int main() {
                 std::cout << "Depósito exitoso" << std::endl;
                 break;
               }
+              // Corriente
               case 2: {
                 if (id_tipo2 < 0 || id_tipo2 > banco.getNumCorriente() - 1) {
                   std::cout << "Id inválido" << std::endl;
@@ -252,6 +266,7 @@ int main() {
                 std::cout << "Depósito exitoso" << std::endl;
                 break;
               }
+              // Inversión
               case 3: {
                 if (id_tipo2 < 0 || id_tipo2 > banco.getNumInversion() - 1) {
                   std::cout << "Id inválido" << std::endl;
