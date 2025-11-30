@@ -43,7 +43,7 @@ int get_int(int min_val, int max_val) {
   return number;
 }
 
-float get_float() {
+float get_float(float min_val, float max_val) {
   float number;
   while (!(std::cin >> number)) {
     // https://cplusplus.com/forum/beginner/283248/#msg1226145
@@ -51,6 +51,32 @@ float get_float() {
     std::cin.clear(); // clear fail flag
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
                     '\n'); // discard the whole line
+  }
+  if (number < min_val || number > max_val) {
+    std::cout << "Entrada inválida, intenta otra vez." << std::endl;
+    std::cin.clear(); // clear fail flag
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
+                    '\n'); // discard the whole line
+    number = get_float(min_val, max_val);
+  }
+  return number;
+}
+
+double get_double(double min_val, double max_val) {
+  double number;
+  while (!(std::cin >> number)) {
+    // https://cplusplus.com/forum/beginner/283248/#msg1226145
+    std::cout << "Entrada inválida, intenta otra vez." << std::endl;
+    std::cin.clear(); // clear fail flag
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
+                    '\n'); // discard the whole line
+  }
+  if (number < min_val || number > max_val) {
+    std::cout << "Entrada inválida, intenta otra vez." << std::endl;
+    std::cin.clear(); // clear fail flag
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
+                    '\n'); // discard the whole line
+    number = get_double(min_val, max_val);
   }
   return number;
 }
@@ -78,28 +104,31 @@ int main() {
 
         std::cout << "Ingresa el saldo inicial." << std::endl;
         double saldo;
-        saldo = get_float();
+        saldo = get_double(0.0, 100000.0);
         std::cin.ignore();
 
         std::cout << "Ingresa el titular de la cuenta." << std::endl;
         getline(std::cin, titular);
 
         switch (tipo) {
+          // Ahorro
           case 1:
             std::cout
                 << "Ingresa el porcentaje de interes como decimal (ej. 0.19)."
                 << std::endl;
             float interes;
-            interes = get_float();
+            interes = get_float(0.0, 1.0);
             banco.abrirCuenta(titular, saldo, interes);
             break;
+          // Corriente
           case 2:
             std::cout << "Ingresa el valor de la línea de crédito."
                       << std::endl;
             double linea_credito;
-            linea_credito = get_float();
+            linea_credito = get_double(0.0, 10000.0);
             banco.abrirCuenta(titular, saldo, linea_credito);
             break;
+          // Inversión
           case 3:
             std::cout << "Ingresa el tipo de activo." << std::endl;
             std::cout << "1.- Bonos" << std::endl;
@@ -130,7 +159,7 @@ int main() {
           case 1:
             std::cout << "Ingresa la cantidad a retirar" << std::endl;
             double cantidad;
-            cantidad = get_float();
+            cantidad = get_double(0.0, 100000.0);
 
             std::cout << "Ingresa el Id de la cuenta de donde retirar"
                       << std::endl;
@@ -189,7 +218,7 @@ int main() {
           case 2:
             std::cout << "Ingresa la cantidad a depositar" << std::endl;
             double cantidad2;
-            cantidad2 = get_float();
+            cantidad2 = get_float(0.0, 100000.0);
 
             std::cout << "Ingresa el Id de la cuenta a la cual se depositará"
                       << std::endl;
