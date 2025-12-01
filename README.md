@@ -10,10 +10,17 @@ depósitos y retiros, pero solo la de ahorros y la de inversión generan un inte
 
 El programa permite abrir nuevas cuentas y realizar operaciones con las distintas cuentas.
 Se ejecuta en una terminal y cuenta con un menú inicial para seleccionar las distintas opciones.
+Para usar el programa solo hay que seguir las instrucciones que aparecen en pantalla.
 
 Al abrir una cuenta nueva se pueden seleccionar 3 tipos de cuentas: de ahorros, corriente (crédito) o de inversión.
 
+Se pueden mostrar todas las cuentas con su información.
+
 Todas las cuentas pueden hacer retiros y recibir depósitos.
+
+Se pueden generar y aplicar los intereses para las cuentas que lo permiten (ahorro e inversión).
+
+Se puede modificar el rendimiento de los distintos activos que maneja el banco.
 
 ### Consideraciones
 
