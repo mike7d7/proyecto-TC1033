@@ -21,7 +21,8 @@ void menu_principal() {
   std::cout << "1.- Agregar cuenta" << std::endl;
   std::cout << "2.- Mostrar cuentas" << std::endl;
   std::cout << "3.- Realizar Operación" << std::endl;
-  std::cout << "4.- Salir" << std::endl;
+  std::cout << "4.- Generar intereses" << std::endl;
+  std::cout << "5.- Salir" << std::endl;
 }
 
 int get_int(int min_val, int max_val) {
@@ -88,7 +89,7 @@ int main() {
   while (true) {
     menu_principal();
     int opcion;
-    opcion = get_int(1, 4);
+    opcion = get_int(1, 5);
 
     std::string titular;
     std::stringstream cuentas;
@@ -281,6 +282,9 @@ int main() {
             }
             break;
         }
+        break;
+      case 4:
+        banco.aplicaIntereses();
         break;
       default:
         return 0;
