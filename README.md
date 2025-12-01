@@ -22,6 +22,10 @@ Se pueden generar y aplicar los intereses para las cuentas que lo permiten (ahor
 
 Se puede modificar el rendimiento de los distintos activos que maneja el banco.
 
+### Diagrama de clases
+
+![](diagrama-de-clases.svg)
+
 ### Consideraciones
 
 El programa corre solamente en la terminal y esta escrito en [C++11](https://en.wikipedia.org/wiki/C++11) por lo que corre en todos los sistemas operativos.
