@@ -31,5 +31,6 @@ class Banco {
     void abrirCuenta(std::string titular, double saldo, double linea_credito);
     void abrirCuenta(std::string titular, double saldo, Activo *activo);
     std::stringstream printCuentas();
+    void aplicaIntereses();
 };
 #endif

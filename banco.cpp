@@ -73,3 +73,12 @@ std::stringstream Banco::printCuentas() {
   output_string << std::endl;
   return output_string;
 }
+
+void Banco::aplicaIntereses() {
+  for (int i = 0; i < num_ahorro; i++) {
+    ahorros[i].generaInteres();
+  }
+  for (int i = 0; i < num_inversiones; i++) {
+    inversiones[i].generaRendimiento();
+  }
+}
