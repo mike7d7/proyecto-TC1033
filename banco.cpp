@@ -62,12 +62,13 @@ std::stringstream Banco::printCuentas() {
   output_string << std::endl;
 
   output_string << "Cuentas de Inversion" << std::endl;
-  output_string << "Titular | id | Saldo | Activo" << std::endl;
+  output_string << "Titular | id | Saldo | Activo | Rendimiento" << std::endl;
   for (int i = 0; i < num_inversiones; i++) {
     output_string << inversiones[i].getTitular() << " | "
                   << inversiones[i].getId() << " | "
                   << inversiones[i].getSaldo() << " | "
-                  << inversiones[i].getActivo().getNombre() << std::endl;
+                  << inversiones[i].getActivo().getNombre() << " | "
+                  << inversiones[i].getActivo().getRendimiento() << std::endl;
   }
   output_string << std::endl;
   return output_string;
