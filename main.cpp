@@ -22,7 +22,8 @@ void menu_principal() {
   std::cout << "2.- Mostrar cuentas" << std::endl;
   std::cout << "3.- Realizar Operación" << std::endl;
   std::cout << "4.- Generar intereses" << std::endl;
-  std::cout << "5.- Salir" << std::endl;
+  std::cout << "5.- Modificar rendimiento de activo" << std::endl;
+  std::cout << "6.- Salir" << std::endl;
 }
 
 int get_int(int min_val, int max_val) {
@@ -89,7 +90,7 @@ int main() {
   while (true) {
     menu_principal();
     int opcion;
-    opcion = get_int(1, 5);
+    opcion = get_int(1, 6);
 
     std::string titular;
     std::stringstream cuentas;
@@ -285,6 +286,24 @@ int main() {
         break;
       case 4:
         banco.aplicaIntereses();
+        break;
+      case 5:
+        std::cout << "Ingresa el activo a modificar" << std::endl;
+        for (int i = 0; i < 5; i++) {
+          std::cout << i + 1 << ".- " << banco.getActivo(i)->getNombre()
+                    << std::endl;
+        }
+        int activo_a_modificar;
+        activo_a_modificar = get_int(1, 5) - 1;
+        std::cout << "El rendimiento actual del activo es de "
+                  << banco.getActivo(activo_a_modificar)->getRendimiento()
+                  << std::endl;
+        std::cout << "Ingresa el nuevo rendimiento como un decimal entre 0 y 1 "
+                     "(ej. 0.12)"
+                  << std::endl;
+        float nuevo_rendimiento;
+        nuevo_rendimiento = get_float(0.0, 1.0);
+        banco.getActivo(activo_a_modificar)->setRendimiento(nuevo_rendimiento);
         break;
       default:
         return 0;
