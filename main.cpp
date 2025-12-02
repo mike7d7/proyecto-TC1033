@@ -8,6 +8,12 @@
 #include <sstream>
 #include <string>
 
+void enter_to_continue() {
+  std::cout << "Presiona enter para continuar" << std::endl;
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::cin.get();
+}
+
 void clear() {
   std::cout << "\x1B[2J\x1B[H";
   for (int i = 0; i < 100; i++) {
@@ -16,7 +22,7 @@ void clear() {
 }
 
 void menu_principal() {
-  // clear();
+  clear();
   std::cout << "Ingresa una opción" << std::endl;
   std::cout << "1.- Agregar cuenta" << std::endl;
   std::cout << "2.- Mostrar cuentas" << std::endl;
@@ -98,6 +104,7 @@ int main() {
     switch (opcion) {
       // Abrir cuenta
       case 1:
+        clear();
         std::cout << "Ingresa el tipo de cuenta a abrir." << std::endl;
         std::cout << "1.- Ahorro" << std::endl;
         std::cout << "2.- Corriente" << std::endl;
@@ -151,11 +158,14 @@ int main() {
         break;
       // Mostrar cuentas
       case 2:
+        clear();
         cuentas = banco.printCuentas();
         std::cout << cuentas.str();
+        enter_to_continue();
         break;
       // Realizar movimiento
       case 3:
+        clear();
         std::cout << "Ingresa el tipo de movimiento a realizar." << std::endl;
         std::cout << "1.- Retiro" << std::endl;
         std::cout << "2.- Depósito" << std::endl;
@@ -283,11 +293,16 @@ int main() {
             }
             break;
         }
+        enter_to_continue();
         break;
       case 4:
+        clear();
         banco.aplicaIntereses();
+        std::cout << "Intereses aplicados correctamente." << std::endl;
+        enter_to_continue();
         break;
       case 5:
+        clear();
         std::cout << "Ingresa el activo a modificar" << std::endl;
         for (int i = 0; i < 5; i++) {
           std::cout << i + 1 << ".- " << banco.getActivo(i)->getNombre()
