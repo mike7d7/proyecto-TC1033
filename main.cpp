@@ -15,7 +15,6 @@ void enter_to_continue() {
 }
 
 void clear() {
-  std::cout << "\x1B[2J\x1B[H";
   for (int i = 0; i < 100; i++) {
     std::cout << std::endl;
   }
