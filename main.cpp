@@ -127,6 +127,7 @@ int main() {
         std::cout << "2.- Corriente" << std::endl;
         std::cout << "3.- Inversión" << std::endl;
 
+        // Guardar selección de tipo de cuenta
         int tipo;
         tipo = get_int(1, 3);
         std::cin.ignore();
@@ -188,8 +189,11 @@ int main() {
         std::cout << "1.- Retiro" << std::endl;
         std::cout << "2.- Depósito" << std::endl;
         std::cout << "3.- Cancelar" << std::endl;
+
+        // Guardar selección del movimiento a realizar
         int movimiento;
         movimiento = get_int(1, 3);
+
         switch (movimiento) {
           // Retiro
           case 1:
@@ -202,11 +206,17 @@ int main() {
                       << std::endl;
             int id_general;
             id_general = get_int(100, 399);
+
+            // Tipo de cuenta se extrae del id general de la cuenta
+            // 100 - 199: Ahorro
+            // 200 - 299: Corriente
+            // 300 - 399: Inversión
             int tipo;
             tipo = id_general / 100;
 
             int id_tipo;
             id_tipo = id_general - (tipo * 100);
+
             // Switch para cada tipo de cuenta
             switch (tipo) {
               // Ahorro
@@ -267,11 +277,15 @@ int main() {
                       << std::endl;
             int id_general2;
             id_general2 = get_int(100, 399);
+
+            // Explicación para pasar de id a tipo de cuenta en comentario en
+            // movimiento retiro.
             int tipo2;
             tipo2 = id_general2 / 100;
 
             int id_tipo2;
             id_tipo2 = id_general2 - (tipo2 * 100);
+
             // Switch para tipos de cuentas
             switch (tipo2) {
               // Ahorro
