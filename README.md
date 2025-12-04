@@ -35,6 +35,8 @@ Para compilar, se debe usar el compilador `g++`. Otros compiladores pueden funci
 
 Para el código se utiliza el formateador [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html). En el archivo `.clang-format` se encuentra el estilo específico utilizado en este proyecto.
 
+Para los comentarios, solo se incluyen cuando el código no se pueda entender de forma inmediata. Funcionamiento de getters y setters es prácticamente universal, por lo tanto solo se comentan si hacen algo aparte de solo regresar o asignar el valor correspondiente.
+
 ### Compilación e instalación
 
 #### Linux
