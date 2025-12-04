@@ -113,7 +113,7 @@ int main() {
         tipo = get_int(1, 3);
         std::cin.ignore();
 
-        std::cout << "Ingresa el saldo inicial." << std::endl;
+        std::cout << "Ingresa el saldo inicial (máximo 100000)." << std::endl;
         double saldo;
         saldo = get_double(0.0, 100000.0);
         std::cin.ignore();
@@ -133,10 +133,11 @@ int main() {
             break;
           // Corriente
           case 2:
-            std::cout << "Ingresa el valor de la línea de crédito."
-                      << std::endl;
+            std::cout
+                << "Ingresa el valor de la línea de crédito (máximo 100000)."
+                << std::endl;
             double linea_credito;
-            linea_credito = get_double(0.0, 10000.0);
+            linea_credito = get_double(0.0, 100000.0);
             banco.abrirCuenta(titular, saldo, linea_credito);
             break;
           // Inversión
@@ -174,7 +175,8 @@ int main() {
         switch (movimiento) {
           // Retiro
           case 1:
-            std::cout << "Ingresa la cantidad a retirar" << std::endl;
+            std::cout << "Ingresa la cantidad a retirar (máximo 100000)."
+                      << std::endl;
             double cantidad;
             cantidad = get_double(0.0, 100000.0);
 
@@ -238,7 +240,8 @@ int main() {
             break;
           // Depósito
           case 2:
-            std::cout << "Ingresa la cantidad a depositar" << std::endl;
+            std::cout << "Ingresa la cantidad a depositar (máximo 100000)"
+                      << std::endl;
             double cantidad2;
             cantidad2 = get_float(0.0, 100000.0);
 
