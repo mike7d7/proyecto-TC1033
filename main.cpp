@@ -8,18 +8,21 @@
 #include <sstream>
 #include <string>
 
+// Detiene la ejecución hasta que el usuario presiona la tecla "enter".
 void enter_to_continue() {
   std::cout << "Presiona enter para continuar" << std::endl;
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   std::cin.get();
 }
 
+// Simula limpiar la pantalla mediante 100 newlines.
 void clear() {
   for (int i = 0; i < 100; i++) {
     std::cout << std::endl;
   }
 }
 
+// Imprime el menú principal de la aplicación
 void menu_principal() {
   clear();
   std::cout << "Ingresa una opción" << std::endl;
@@ -31,10 +34,12 @@ void menu_principal() {
   std::cout << "6.- Salir" << std::endl;
 }
 
+// Verifica que el input sea un int válido y que esté dentro del rango
+// especificado. Lógica para verificar cast de string a int sacado de:
+// https://cplusplus.com/forum/beginner/283248/#msg1226145
 int get_int(int min_val, int max_val) {
   int number;
   while (!(std::cin >> number)) {
-    // https://cplusplus.com/forum/beginner/283248/#msg1226145
     std::cout << "Entrada inválida, intenta otra vez." << std::endl;
     std::cin.clear(); // clear fail flag
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
@@ -50,10 +55,12 @@ int get_int(int min_val, int max_val) {
   return number;
 }
 
+// Verifica que el input sea un float válido y que esté dentro del rango
+// especificado. Lógica para verificar cast de string a float sacado de:
+// https://cplusplus.com/forum/beginner/283248/#msg1226145
 float get_float(float min_val, float max_val) {
   float number;
   while (!(std::cin >> number)) {
-    // https://cplusplus.com/forum/beginner/283248/#msg1226145
     std::cout << "Entrada inválida, intenta otra vez." << std::endl;
     std::cin.clear(); // clear fail flag
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
@@ -69,6 +76,9 @@ float get_float(float min_val, float max_val) {
   return number;
 }
 
+// Verifica que el input sea un double válido y que esté dentro del rango
+// especificado. Lógica para verificar cast de string a double sacado de:
+// https://cplusplus.com/forum/beginner/283248/#msg1226145
 double get_double(double min_val, double max_val) {
   double number;
   while (!(std::cin >> number)) {
@@ -88,17 +98,25 @@ double get_double(double min_val, double max_val) {
   return number;
 }
 
+// Función principal del programa
 int main() {
+  // Declarar objeto de tipo Banco, la mayor parte de la funcionalidad se basa
+  // en esta clase.
   Banco banco;
 
   // Ciclo para menú de opciones
   while (true) {
     menu_principal();
+
+    // Guardar selección del menú
     int opcion;
     opcion = get_int(1, 6);
 
+    // Variables usadas dentro del switch, si las declaro adentro del switch el
+    // compilador marca errores.
     std::string titular;
     std::stringstream cuentas;
+
     // Switch para opciones del menú principal
     switch (opcion) {
       // Abrir cuenta
