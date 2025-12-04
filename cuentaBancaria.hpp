@@ -15,12 +15,21 @@ class CuentaBancaria {
     double saldo;
 
   public:
+    // Constructor que recibe id, titular y saldo. Asigna los datos recibidos a
+    // los atributos de la clase.
     CuentaBancaria(int id, std::string titular, double saldo)
         : id(id), titular(titular), saldo(saldo) {};
+
+    // Getters
     int getId();
     double getSaldo();
     std::string getTitular();
+
+    // Setter
     void setSaldo(double);
+
+    // Métodos de movimientos
+    // Ambos reciben una cantidad como parámetro.
     int retirar(double);
     void depositar(double);
 };
