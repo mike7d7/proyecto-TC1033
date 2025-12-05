@@ -52,3 +52,6 @@ Compilación:
 `g++ -std=c++11 main.cpp activo.cpp banco.cpp cuentaAhorro.cpp cuentaBancaria.cpp cuentaCorriente.cpp cuentaInversion.cpp -o banco`
 
 Ejecución: `.\banco.exe`
+
+### Correcciones
+En el avance 1 se mencionó un problema de compilación debido a las extensiones de archivo. En esta [commit](890f4ec218c075a14390526b000e272772dc601b) se arregla el problema al cambiar las extensiones `.cc` a `.cpp` y las `.hh` a `.hpp`.
