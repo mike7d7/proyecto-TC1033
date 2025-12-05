@@ -55,3 +55,10 @@ Ejecución: `.\banco.exe`
 
 ### Correcciones
 En el avance 1 se mencionó un problema de compilación debido a las extensiones de archivo. En esta [commit](890f4ec218c075a14390526b000e272772dc601b) se arregla el problema al cambiar las extensiones `.cc` a `.cpp` y las `.hh` a `.hpp`.
+
+### Archivos adicionales
+En el repo, hay varios archivos adicionales al código de la aplicación, todos los archivos tienenun uso y no son basura.
+
+`.clang-format`: Archivo de configuración para estilo del código.
+
+`flake.lock` y `flake.nix`: Proveen un entorno de desarrollo que utilizo junto con la distribución de Linux [NixOS](https://nixos.org/).
